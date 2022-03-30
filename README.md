@@ -52,4 +52,4 @@ Please make sure to update tests as appropriate.
 
 ## License
 
-[Apache License 2.0](https://github.com/pankajbisht03/Acko-Frontend/blob/main/LICENSE)
+[MIT](https://github.com/Vaibhav-Solanki/ackoBackend/blob/main/LICENSE)
