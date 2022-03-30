@@ -1,7 +1,6 @@
 # [Acko Backend](https://acko-vaibhav-solanki.vercel.app/)
 
-Acko General Insurance is a private sector general insurance company in India.
-all frontend code available on [Acko Frontend](https://github.com/pankajbisht03/Acko-Frontend/)
+Acko General Insurance is a private sector general insurance company in India. all frontend codes are available on [Acko Frontend](https://github.com/pankajbisht03/Acko-Frontend/)
 
 ## Features:
 
