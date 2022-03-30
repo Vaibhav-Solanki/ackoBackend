@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/paynow", [parseUrl, parseJson], (req, res) => {
-  // Route for making payment
+  // Route for making paymen
 
   var paymentDetails = {
     amount: req.body.amount,
