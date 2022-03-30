@@ -1,0 +1,8 @@
+{
+  "name": "ackoBackend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Vaibhav-Solanki/ackoBackend.git",
+  "author": "Vaibhav Solanki <Vaibhavdasss@gmail.com>",
+  "license": "MIT"
+}
