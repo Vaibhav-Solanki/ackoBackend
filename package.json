@@ -2,7 +2,10 @@
   "name": "ackobackend",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/Vaibhav-Solanki/ackoBackend.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vaibhav-Solanki/ackoBackend.git"
+  },
   "author": "Vaibhav Solanki <Vaibhavdasss@gmail.com>",
   "license": "MIT",
   "scripts": {
@@ -12,7 +15,14 @@
     "dotenv": "^16.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.3",
+    "mongoose": "^6.2.9",
     "nodemon": "^2.0.15",
     "paytmchecksum": "^1.5.0"
-  }
+  },
+  "description": "Acko General Insurance is a private sector general insurance company in India. all frontend codes are available on [Acko Frontend](https://github.com/pankajbisht03/Acko-Frontend/)",
+  "bugs": {
+    "url": "https://github.com/Vaibhav-Solanki/ackoBackend/issues"
+  },
+  "homepage": "https://github.com/Vaibhav-Solanki/ackoBackend#readme",
+  "keywords": []
 }
