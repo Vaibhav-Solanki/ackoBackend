@@ -75,30 +75,7 @@ app.post("/paynow", [parseUrl, parseJson], (req, res) => {
 });
 app.post("/callback", (req, res) => {
   // Route for verifiying payment
-
-  var body = "";
-
-  req.on("data", function (data) {
-    body += data;
-  });
-
-  req.on("end", function () {
-    var html = "";
-    var post_data = qs.parse(body);
-
-    // received params in callback
-    console.log("Callback Response: ", post_data, "\n");
-
-    // verify the checksum
-    var checksumhash = post_data.CHECKSUMHASH;
-    // delete post_data.CHECKSUMHASH;
-    var result = checksum_lib.verifychecksum(
-      post_data,
-      config.PaytmConfig.key,
-      checksumhash
-    );
-    res.send(result);
-  });
+  res.send(req);
 });
 
 module.exports = app;
