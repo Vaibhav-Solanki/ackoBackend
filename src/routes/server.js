@@ -11,10 +11,6 @@ const config = require("./Paytm/config");
 const parseUrl = express.urlencoded({ extended: false });
 const parseJson = express.json({ extended: false });
 
-app.get("/", (req, res) => {
-  res.render("index");
-});
-
 app.post("/paynow", [parseUrl, parseJson], (req, res) => {
   // Route for making paymen
 
@@ -75,7 +71,7 @@ app.post("/paynow", [parseUrl, parseJson], (req, res) => {
 });
 app.post("/callback", (req, res) => {
   // Route for verifiying payment
-  res.send("heloo");
+  res.redirect("https://acko-three.vercel.app/mypolicy");
 });
 
 module.exports = app;
