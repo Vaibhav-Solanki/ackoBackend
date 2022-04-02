@@ -53,7 +53,7 @@ router.post("/otp", async (req, res) => {
           httpOnly: true,
         });
         return res.json({ message: "signin success" });
-      } else return res.json({ message: "incorrect Otp" });
+      } else return res.send({ message: "incorrect Otp" });
     }
     return res.json({ message: "incorrect Otp" });
   } catch (error) {
