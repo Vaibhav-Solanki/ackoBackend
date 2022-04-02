@@ -1,16 +1,19 @@
 require("dotenv").config();
 const express = require("express");
+const connect = require("./configs/db");
 var app = express();
-var bodyParser = require("body-parser");
+app.use(express.json());
+// var bodyParser = require("body-parser");
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.json());
 
-app.use("/", require("./routes/server"));
+app.use("/", require("./controllers/Auth"));
 
-let port = process.env.PORT || 1234;
+let port = process.env.PORT || 3000;
 
 module.exports = function () {
+  connect();
   app.listen(port, () => {
     console.log("Server is started");
   });
