@@ -15,10 +15,10 @@ app.post("/paynow", [parseUrl, parseJson], (req, res) => {
   // Route for making paymen
 
   var paymentDetails = {
-    amount: req.body.amount,
-    customerId: req.body.name.replace(/\s/g, ""),
-    customerEmail: req.body.email,
-    customerPhone: req.body.phone,
+    amount: 3470,
+    customerId: "Test-user",
+    customerEmail: "test@mail.com",
+    customerPhone: "9145842395",
   };
   if (
     !paymentDetails.amount ||
@@ -36,7 +36,7 @@ app.post("/paynow", [parseUrl, parseJson], (req, res) => {
     params["ORDER_ID"] = "TEST_" + new Date().getTime();
     params["CUST_ID"] = paymentDetails.customerId;
     params["TXN_AMOUNT"] = paymentDetails.amount;
-    params["CALLBACK_URL"] = `https://ackobackend.herokuapp.com/callback`;
+    params["CALLBACK_URL"] = `https://ackobackend.herokuapp.com/pay/callback`;
     params["EMAIL"] = paymentDetails.customerEmail;
     params["MOBILE_NO"] = paymentDetails.customerPhone;
 
@@ -70,7 +70,6 @@ app.post("/paynow", [parseUrl, parseJson], (req, res) => {
   }
 });
 app.post("/callback", (req, res) => {
-  // Route for verifiying payment
   res.redirect("https://acko-three.vercel.app/mypolicy");
 });
 

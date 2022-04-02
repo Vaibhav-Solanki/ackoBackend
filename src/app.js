@@ -12,6 +12,7 @@ app.use(express.json());
 // app.use(cookieParser());
 
 app.use("/", require("./controllers/Auth"));
+app.use("/pay", require("./routes/server"));
 
 let port = process.env.PORT || 3000;
 
