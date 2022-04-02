@@ -50,7 +50,7 @@ router.post("/otp", async (req, res) => {
         const token = await user.genrateAuthtoken();
         res.cookie("jwtoken", token, {
           expires: new Date(Date.now() + 258920000),
-          httpOnly: true,
+          httpOnly: false,
         });
         return res.json({ message: "signin success" });
       } else return res.send({ message: "incorrect Otp" });
