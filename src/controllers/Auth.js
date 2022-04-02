@@ -12,15 +12,15 @@ function generateOTP() {
   return OTP;
 }
 
-router.get("/logout", async (req, res) => {
-  res.cookie("jwtoken", "none", {
-    expires: new Date(Date.now() + 2 * 1000),
-    httpOnly: true,
-  });
-  res
-    .status(200)
-    .json({ success: true, message: "User logged out successfully" });
-});
+// router.get("/logout", async (req, res) => {
+//   res.cookie("jwtoken", "none", {
+//     expires: new Date(Date.now() + 2 * 1000),
+//     httpOnly: true,
+//   });
+//   res
+//     .status(200)
+//     .json({ success: true, message: "User logged out successfully" });
+// });
 
 router.post("/email", async (req, res) => {
   let email = req.body.email;
@@ -48,11 +48,11 @@ router.post("/otp", async (req, res) => {
     if (user) {
       if (user.otp == otp) {
         const token = await user.genrateAuthtoken();
-        res.cookie("jwtoken", token, {
-          expires: new Date(Date.now() + 258920000),
-          httpOnly: false,
-        });
-        return res.json({ message: "signin success" });
+        // res.cookie("jwtoken", token, {
+        //   expires: new Date(Date.now() + 258920000),
+        //   httpOnly: false,
+        // });
+        return res.json({ message: "signin success", token: token });
       } else return res.send({ message: "incorrect Otp" });
     }
     return res.json({ message: "incorrect Otp" });
