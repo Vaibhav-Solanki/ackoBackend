@@ -26,7 +26,7 @@ router.post("/email", async (req, res) => {
   let email = req.body.email;
   let otp = generateOTP();
   try {
-    const user = await User.findOne({ email: email });
+    let user = await User.findOne({ email: email });
     if (user) {
       user.otp = otp;
       sendMail(email, otp);
