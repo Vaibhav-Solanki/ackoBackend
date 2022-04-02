@@ -11,7 +11,7 @@ const config = require("./Paytm/config");
 const parseUrl = express.urlencoded({ extended: false });
 const parseJson = express.json({ extended: false });
 
-app.post("/paynow", [parseUrl, parseJson], (req, res) => {
+app.get("/paynow", [parseUrl, parseJson], (req, res) => {
   // Route for making paymen
 
   var paymentDetails = {

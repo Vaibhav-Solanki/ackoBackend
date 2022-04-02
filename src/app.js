@@ -5,11 +5,11 @@ const core = require("cors");
 var app = express();
 app.use(core());
 app.use(express.json());
-// var bodyParser = require("body-parser");
-// const cookieParser = require("cookie-parser");
-// app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(bodyParser.json());
-// app.use(cookieParser());
+var bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(cookieParser());
 
 app.use("/", require("./controllers/Auth"));
 app.use("/pay", require("./routes/server"));
