@@ -3,10 +3,11 @@ const express = require("express");
 const connect = require("./configs/db");
 var app = express();
 app.use(express.json());
-// var bodyParser = require("body-parser");
-
-// app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(bodyParser.json());
+var bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(cookieParser());
 
 app.use("/", require("./controllers/Auth"));
 
