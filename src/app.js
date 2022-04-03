@@ -19,6 +19,6 @@ let port = process.env.PORT || 3000;
 module.exports = function () {
   connect();
   app.listen(port, () => {
-    console.log("Server is started");
+    console.log("Server is started" + port);
   });
 };
